@@ -54,3 +54,10 @@ CustomColorScheme.args = {
     positive: '#00c0d9'
   }
 }
+
+export const NoAnimationScale = BeaconTemplate.bind({})
+
+NoAnimationScale.args = {
+  status: 'negative',
+  scaleBeacon: false
+}

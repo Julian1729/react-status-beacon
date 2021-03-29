@@ -3,14 +3,14 @@ import { defaultsDeep } from 'lodash'
 import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
-const generateAnimation = ({ status, colors }) => {
+const generateAnimation = ({ status, colors, scaleBeacon }) => {
   let color = null
   let size = null
 
   switch (status) {
     case 'positive':
       color = colors.positive
-      size = '250%'
+      size = '250%' // 250% is the normal/defa size
       break
     case 'neutral':
       color = colors.neutral
@@ -32,8 +32,17 @@ const generateAnimation = ({ status, colors }) => {
       background-color: ${color + '88'};
     }
     100% {
-      height: ${size};
-      width: ${size};
+      ${
+        scaleBeacon
+          ? css`
+              height: ${size};
+              width: ${size};
+            `
+          : css`
+              height: 250%;
+              width: 250%;
+            `
+      }
       background-color: ${color + '07'};
     }
   }
@@ -144,7 +153,8 @@ const Beacon = (props) => (
         dormant: '#666666'
       },
       status: 'positive',
-      speed: 'normal'
+      speed: 'normal',
+      scaleBeacon: true
     })}
   />
 )
