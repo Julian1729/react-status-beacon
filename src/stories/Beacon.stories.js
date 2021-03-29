@@ -68,3 +68,9 @@ NoAnimationScale.args = {
   status: 'negative',
   scaleBeacon: false
 }
+
+export const CustomSize = BeaconTemplate.bind({})
+
+CustomSize.args = {
+  size: '1.5em'
+}

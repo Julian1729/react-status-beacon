@@ -67,8 +67,10 @@ const Wrapper = styled.span`
   position: relative;
   display: inline-block;
   z-index: 1;
-  height: 1em;
-  width: 1em;
+  ${({ size }) => css`
+    height: ${size};
+    width: ${size};
+  `}
   vertical-align: middle;
   margin: 0 0.5em;
 
@@ -82,7 +84,7 @@ const Wrapper = styled.span`
         background-color: ${colors.dormant};
       `}
     display: inline-block;
-    border-radius: 1em;
+    border-radius: 100%;
     position: relative;
     height: 100%;
     width: 100%;
@@ -161,7 +163,8 @@ const Beacon = (props) => (
       },
       status: 'positive',
       speed: 'normal',
-      scaleBeacon: true
+      scaleBeacon: true,
+      size: '1em'
     })}
   />
 )
