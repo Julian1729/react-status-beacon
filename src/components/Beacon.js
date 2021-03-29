@@ -1,12 +1,11 @@
 import React from 'react'
-import _ from 'lodash'
+import { defaultsDeep } from 'lodash'
 import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 
 const generateAnimation = ({ status, colors }) => {
   let color = null
   let size = null
-  // OPTIMIZE: change size based on size prop
 
   switch (status) {
     case 'positive':
@@ -45,7 +44,7 @@ const mapPropToSpeed = (speed) =>
   ({
     normal: '1300ms',
     fast: '800ms',
-    slow: '2500ms'
+    slow: '2300ms'
   }[speed] || '1300ms')
 
 const Wrapper = styled.span`
@@ -135,19 +134,20 @@ const Wrapper = styled.span`
   }
 `
 
-const Beacon = (props) => {
-  const args = _.defaults({}, props, {
-    colors: {
-      positive: '#309D7D',
-      neutral: '#FFC800',
-      negative: '#D62828',
-      dormant: '#666666'
-    },
-    status: 'positive',
-    speed: 'normal'
-  })
-  return <Wrapper {...args} />
-}
+const Beacon = (props) => (
+  <Wrapper
+    {...defaultsDeep({}, props, {
+      colors: {
+        positive: '#309D7D',
+        neutral: '#FFC800',
+        negative: '#D62828',
+        dormant: '#666666'
+      },
+      status: 'positive',
+      speed: 'normal'
+    })}
+  />
+)
 
 // Beacon.defaultProps = {
 //   status: 'positive'

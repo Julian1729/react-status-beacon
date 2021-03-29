@@ -10,7 +10,6 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 16px;
-  font-family: 'Lato', sans-serif;
   padding: 3em;
 `
 
@@ -34,11 +33,14 @@ const Subtitle = styled.h2`
 
 const Type = styled.p`
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 100;
 `
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
 `
 
 const App = () => (
@@ -82,6 +84,26 @@ const App = () => (
       <ExampleWrapper>
         <Type>
           Fast <Beacon status='positive' speed='fast' />
+        </Type>
+      </ExampleWrapper>
+
+      <Subtitle>Custom Color Scheme</Subtitle>
+      <ExampleWrapper>
+        <Type>
+          Blue Positive{' '}
+          <Beacon status='positive' colors={{ positive: '#00c0d9' }} />
+        </Type>
+      </ExampleWrapper>
+      <ExampleWrapper>
+        <Type>
+          Pink Neutral{' '}
+          <Beacon status='neutral' colors={{ neutral: '#ff92a5' }} />
+        </Type>
+      </ExampleWrapper>
+      <ExampleWrapper>
+        <Type>
+          Black Negative{' '}
+          <Beacon status='negative' colors={{ negative: '#041412' }} />
         </Type>
       </ExampleWrapper>
     </AppContainer>

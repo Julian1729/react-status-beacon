@@ -42,7 +42,15 @@ FastSpeed.args = {
 
 export const SlowSpeed = BeaconTemplate.bind({})
 
-FastSpeed.args = {
+SlowSpeed.args = {
   status: 'positive',
   speed: 'slow'
+}
+
+export const CustomColorScheme = BeaconTemplate.bind({})
+
+CustomColorScheme.args = {
+  colors: {
+    positive: '#00c0d9'
+  }
 }
