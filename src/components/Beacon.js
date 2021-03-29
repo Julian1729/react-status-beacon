@@ -10,7 +10,7 @@ const generateAnimation = ({ status, colors, scaleBeacon }) => {
   switch (status) {
     case 'positive':
       color = colors.positive
-      size = '250%' // 250% is the normal/defa size
+      size = '250%' // 250% is the normal/default size
       break
     case 'neutral':
       color = colors.neutral
@@ -49,12 +49,19 @@ const generateAnimation = ({ status, colors, scaleBeacon }) => {
 `
 }
 
-const mapPropToSpeed = (speed) =>
+const mapStringToSpeed = (speed) =>
   ({
     normal: '1300ms',
     fast: '800ms',
     slow: '2300ms'
   }[speed] || '1300ms')
+
+const mapPropToSpeed = (speed) => {
+  if (typeof speed === 'number') {
+    return `${speed}ms`
+  }
+  return mapStringToSpeed(speed)
+}
 
 const Wrapper = styled.span`
   position: relative;
@@ -124,17 +131,17 @@ const Wrapper = styled.span`
         case 'positive':
           return css`
             animation: ${(props) => generateAnimation(props)}
-              ${({ speed }) => mapPropToSpeed(speed)} ease-in-out infinite;
+              ${({ speed }) => mapPropToSpeed(speed)} linear infinite;
           `
         case 'neutral':
           return css`
             animation: ${(props) => generateAnimation(props)}
-              ${({ speed }) => mapPropToSpeed(speed)} ease-in-out infinite;
+              ${({ speed }) => mapPropToSpeed(speed)} linear infinite;
           `
         case 'negative':
           return css`
             animation: ${(props) => generateAnimation(props)}
-              ${({ speed }) => mapPropToSpeed(speed)} ease-in-out infinite;
+              ${({ speed }) => mapPropToSpeed(speed)} linear infinite;
           `
         default:
           return ''
