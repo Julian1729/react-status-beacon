@@ -62,5 +62,14 @@
     "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "styled-components": "^5.2.1"
-  }
+  },
+  "keywords": [
+    "react",
+    "status",
+    "beacon",
+    "status indicator",
+    "status animation",
+    "react-animation",
+    "pulse"
+  ]
 }
