@@ -38,8 +38,6 @@ const ExampleConnectionStatus = () => (
 
 ## Props
 
----
-
 ### `status`
 
 The status you want to indicate with the beacon.
