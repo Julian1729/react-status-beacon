@@ -1,6 +1,6 @@
 {
   "name": "react-status-beacon",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Display an animated beacon to indicate a status.",
   "author": "Julian1729",
   "license": "MIT",
