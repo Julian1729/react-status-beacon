@@ -22,6 +22,15 @@ const ExampleWrapper = styled.section`
   border-radius: 20px;
 `
 
+const StatusBar = styled.section`
+  padding: 15px;
+  /* background: #eee; */
+  width: 300px;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 20px;
+`
+
 const Title = styled.h1`
   font-size: 2em;
   margin-bottom: 15px;
@@ -106,6 +115,13 @@ const App = () => (
           <Beacon status='negative' colors={{ negative: '#041412' }} />
         </Type>
       </ExampleWrapper>
+
+      <Subtitle>Examples</Subtitle>
+      <StatusBar>
+        <Type>
+          Connnection <Beacon status='positive' />
+        </Type>
+      </StatusBar>
     </AppContainer>
   </>
 )
