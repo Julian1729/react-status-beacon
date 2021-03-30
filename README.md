@@ -4,6 +4,8 @@
 
 Display an animated beacon to indicate an application status such as signal strength, buffer load, location etc.
 
+<a href="https://codesandbox.io/s/react-status-beacon-examples-gt6m9?file=/src/App.js" target="_blank">Live Demo</a>
+
 ![react-status-beacon status examples](https://github.com/Julian1729/react-status-beacon/raw/main/example/assets/examples.gif)
 
 ## Install
